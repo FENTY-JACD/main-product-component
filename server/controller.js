@@ -31,6 +31,49 @@ const controller = {
         res.status(200).send(results)
       }
     })
+  },
+
+///// Here starts the work of Chris ///////
+
+  getProduct: (req, res) => {
+
+    dbHelpers.getproduct(req.params, (err, results) => {
+      if(err) {
+        res.status(400).send(err)
+      } else {
+        res.status(200).send(results)
+      }
+    })
+  },
+
+  postProduct: (req, res) => {
+    dbHelpers.postProduct(req.params, (err, results) => {
+      if(err) {
+        res.status(400).send(err)
+      } else {
+        res.status(200).send(results)
+      }
+    })
+  },
+
+  updateProduct: (req, res) => {
+    dbHelpers.updateProduct(req.params, (err, results) => {
+      if(err) {
+        res.status(400).send(err)
+      } else {
+        res.status(200).send(results)
+      }
+    })
+  },
+
+  deleteProduct: (req, res) => {
+    dbHelpers.deleteProduct(req.params, (err, results) => {
+      if(err) {
+        res.status(400).send(err)
+      } else {
+        res.status(200).send(results)
+      }
+    })
   }
 
 

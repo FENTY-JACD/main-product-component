@@ -36,7 +36,7 @@ class App extends React.Component {
      .then((data) => {
       this.setState({
         items: data.data,
-      }, () => console.log(this.state.items))
+      })
     })
     .then(() => {
       this.random();
@@ -47,13 +47,13 @@ class App extends React.Component {
   random() {
     this.setState({
       item: (this.state.items[Math.floor(Math.random() * Math.floor(this.state.items.length))])
-    }, () => console.log(this.state.item));
+    });
   }
 
   photoChange(id) {
     this.setState({
       whichPic: id
-    }, () => console.log(this.state.whichPic));
+    });
   }
 
   render() {

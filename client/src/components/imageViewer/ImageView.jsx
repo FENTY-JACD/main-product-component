@@ -25,7 +25,7 @@ class ImageView extends React.Component {
     .then((data) => {
       this.setState({
         photos: data.data
-      }, () => console.log(this.state.photos))
+      })
     })
     .then(() => {
       this.random();
@@ -39,7 +39,7 @@ class ImageView extends React.Component {
       photo: (this.state.photos[Math.floor(Math.random() * Math.floor(this.state.photos.length))]),
       photo2: (this.state.photos[Math.floor(Math.random() * Math.floor(this.state.photos.length))]),
       photo3: (this.state.photos[Math.floor(Math.random() * Math.floor(this.state.photos.length))]),
-    }, () => console.log(this.state.photo));
+    });
   }
 
   render() {

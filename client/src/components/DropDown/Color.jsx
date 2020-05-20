@@ -47,7 +47,7 @@ class Color extends React.Component {
         placeholder: this.props.item[0].name1,
         placeColor: this.props.item[0].color1,
         id: this.props.item[0].id
-      }, () => console.log(this.state.id));
+      });
     }, 675);
   }
 
@@ -63,7 +63,7 @@ class Color extends React.Component {
   idHandler(id) {
     this.setState({
       id: id
-    }, () => console.log(this.state.id));
+    });
   }
 
   showDropdownMenu(event) {

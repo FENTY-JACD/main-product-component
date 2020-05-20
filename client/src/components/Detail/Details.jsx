@@ -55,7 +55,7 @@ class Details extends React.Component {
   clickHandler(event, name) {
     this.setState({
       clicked: name,
-    }, () => console.log(this.state.clicked));
+    });
   }
 
 

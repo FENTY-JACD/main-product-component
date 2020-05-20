@@ -30,11 +30,14 @@ var create = () =>{
   return product;
 };
 
-create()
+// commented this out because i have no clue why its here
+// create()
 
+
+//This will create 100 products
 const createProducts = () => {
   let productsArr = [];
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 10000000; i++) {
     productsArr.push(create());
   }
   return productsArr;
@@ -42,7 +45,7 @@ const createProducts = () => {
 
 let products = createProducts();
 
-
+// Seeding the product table
 var seedDb = () =>{
   let queries = [];
   for (let i = 0; i < products.length; i++) {
@@ -70,7 +73,7 @@ let img2 = ["https://fentybeauty.s3-us-west-1.amazonaws.com/Fenty+Photos/Foregro
 let img3 = ["https://fentybeauty.s3-us-west-1.amazonaws.com/Fenty+Photos/Foreground/model/model1.jpg", "https://fentybeauty.s3-us-west-1.amazonaws.com/Fenty+Photos/Foreground/model/model2.jpg", "https://fentybeauty.s3-us-west-1.amazonaws.com/Fenty+Photos/Foreground/model/model3.jpg", "https://fentybeauty.s3-us-west-1.amazonaws.com/Fenty+Photos/Foreground/model/model4.jpg", "https://fentybeauty.s3-us-west-1.amazonaws.com/Fenty+Photos/Foreground/model/model5.jpg", "https://fentybeauty.s3-us-west-1.amazonaws.com/Fenty+Photos/Foreground/model/model6.jpg", "https://fentybeauty.s3-us-west-1.amazonaws.com/Fenty+Photos/Foreground/model/model7.jpg", "https://fentybeauty.s3-us-west-1.amazonaws.com/Fenty+Photos/Foreground/model/model8.jpg", "https://fentybeauty.s3-us-west-1.amazonaws.com/Fenty+Photos/Foreground/model/model9.jpg", "https://fentybeauty.s3-us-west-1.amazonaws.com/Fenty+Photos/Foreground/model/model10.jpg"]
 
 
-
+// creating images for a product
 var createProduct = () =>{
   let product = {};
 
@@ -85,9 +88,10 @@ var createProduct = () =>{
 
 //creates 1 photo-set
 
+// creates a photos array table
 const createProd = () => {
   let productsArr = [];
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 10000000; i++) {
     productsArr.push(createProduct());
   }
   return productsArr;
@@ -96,7 +100,7 @@ const createProd = () => {
 let product = createProd();
 
 
-
+// Seedinging the photos Table
 var seedsDb = () =>{
   let queries = [];
   for (let i = 0; i < product.length; i++) {
@@ -149,10 +153,10 @@ var makeProduct = () =>{
 };
 
 
-
+// colors for 100 products
 const makeProd = () => {
   let productsArr = [];
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 10000000; i++) {
     productsArr.push(makeProduct());
   }
   return productsArr;
@@ -162,7 +166,7 @@ let prod = makeProd();
 
 
 
-
+// seeds the colors table
 var seeedsDb = () =>{
   let queries = [];
   for (let i = 0; i < prod.length; i++) {
@@ -178,26 +182,31 @@ var seeedsDb = () =>{
 
 
 
-
+// This was just a floating global variable that could cause problems as everything is named products
 // let products = createProducts();
 
-var seedJunc = () => {
-  for(var product in products) {
-    // console.log(product)
-    let queryStr = `INSERT INTO colorJunc (colorID, productID) VALUES (${product}, ${product})`
-    db.query(queryStr)
-  }
-}
+//The colorJunc table has proved completely useless as it is just a list from 0 to n.
+
+// var seedJunc = () => {
+//   for(var product in products) {
+//     // console.log(product)
+//     let queryStr = `INSERT INTO colorJunc (colorID, productID) VALUES (${product}, ${product})`
+//     db.query(queryStr)
+//   }
+// }
 
 
-
+// seeds the colors table
 seeedsDb();
 
+// seeds the photos table
 seedsDb();
 
+// seeds the product table
 seedDb();
 
-seedJunc()
+// seeds junction table
+// seedJunc()
 
 db.end()
 

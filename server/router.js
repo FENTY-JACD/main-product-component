@@ -15,6 +15,25 @@ const controller = require('./controller.js');
     .route('/colors')
     .get(controller.getColors)
 
+/// Here starts the Work of Chris, the savior of this code /////
+
+  router
+    .route('/product/id')
+    .get(controller.getProduct)
+
+  router
+    .route('/product/:id')
+    .post(controller.postProduct)
+
+  router
+    .route('/product/:id')
+    .put(controller.updateProduct)
+
+  router
+    .route('/product/:id')
+    .delete(controller.deleteProduct)
+
+
 
 module.exports = router
 
