@@ -36,11 +36,11 @@ CREATE TABLE colors (
 );
 
 
-CREATE TABLE colorJunc (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  colorID INT REFERENCES colors(id),
-  productID INT REFERENCES products(id)
-);
+-- CREATE TABLE colorJunc (
+--   id INT AUTO_INCREMENT PRIMARY KEY,
+--   colorID INT REFERENCES colors(id),
+--   productID INT REFERENCES products(id)
+-- );
 
 
 
