@@ -16,7 +16,7 @@ app.use(morgan('dev'));
 app.use(cors());
 app.use('/api', router);
 
-app.get('/name', (req, res) => res.send('Hello Jordan!'));
+// app.get('/name', (req, res) => res.send('Hello Jordan!'));
 
 app.use('/', express.static(path.join(__dirname, '../client/dist')));
 

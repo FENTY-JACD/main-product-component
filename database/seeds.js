@@ -37,7 +37,7 @@ var create = () =>{
 //This will create 100 products
 const createProducts = () => {
   let productsArr = [];
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 1000000; i++) {
     productsArr.push(create());
   }
   return productsArr;
@@ -91,7 +91,7 @@ var createProduct = () =>{
 // creates a photos array table
 const createProd = () => {
   let productsArr = [];
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 1000000; i++) {
     productsArr.push(createProduct());
   }
   return productsArr;
@@ -156,7 +156,7 @@ var makeProduct = () =>{
 // colors for 100 products
 const makeProd = () => {
   let productsArr = [];
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 1000000; i++) {
     productsArr.push(makeProduct());
   }
   return productsArr;
@@ -208,7 +208,7 @@ seedDb();
 // seeds junction table
 // seedJunc()
 
-db.end()
+// db.end()
 
 
 
