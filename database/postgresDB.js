@@ -17,7 +17,7 @@ const pool = new Pool({
 
 pool.query('select now()', (err, res) => {
   console.log('connected');
-  pool.end();
+  // pool.end();
 });
 
 
