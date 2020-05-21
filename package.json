@@ -7,7 +7,7 @@
     "build": "webpack -d --watch",
     "start": "nodemon server/index.js",
     "test": "jest",
-    "seed": "node --max_old_space_size=8192 database/seeds.js",
+    "seed": "node database/seeds.js",
     "postgres-seed": "node database/cs-seed.js"
   },
   "author": "Jordan Chun",

@@ -24,9 +24,6 @@ coverage
 build/
 
 
-seed.js
-seed1.js
-seed2.js
-
-
-schema.sql
+# Extra Files
+products.csv
+schema2.sql
