@@ -8,7 +8,8 @@
     "start": "nodemon server/index.js",
     "test": "jest",
     "seed": "node database/seeds.js",
-    "postgres-seed": "node database/cs-seed.js"
+    "postgres-seed": "node database/cs-seed.js",
+    "speed-test": "k6 run tests/k6Script.js"
   },
   "author": "Jordan Chun",
   "license": "ISC",
