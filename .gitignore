@@ -27,6 +27,6 @@ build/
 seed.js
 seed1.js
 seed2.js
-
+products.csv
 
 schema.sql

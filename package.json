@@ -1,5 +1,5 @@
 {
-  "name": "FentyBeauty",
+  "name": "fentybeauty",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "start": "nodemon server/index.js",
     "test": "jest",
     "seed": "node --max_old_space_size=8192 database/seeds.js",
-    "postgres-seed": "node database/cs-seed.js"
+    "db-seed": "node database/cs-seed.js"
   },
   "author": "Jordan Chun",
   "license": "ISC",
