@@ -8,7 +8,8 @@
     "start": "nodemon server/index.js",
     "test": "jest",
     "seed": "node --max_old_space_size=8192 database/seeds.js",
-    "db-seed": "node database/cs-seed.js"
+    "db-seed": "node database/cs-seed.js",
+    "speed-test": "k6 run tests/k6Script.js"
   },
   "author": "Jordan Chun",
   "license": "ISC",

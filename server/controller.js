@@ -37,9 +37,7 @@ const controller = {
 ///// Here starts the work of Chris ///////
 
   getProduct: (req, res) => {
-    console.log(req.params.id);
-    let id = req.params.id;
-    mongoHelpers.getProduct(id)
+    mongoHelpers.getProduct(req.params.id)
       .then(data => res.status(200).send(data))
       .catch(error => res.status(400).send(error))
   },
