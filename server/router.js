@@ -21,17 +21,18 @@ const controller = require('./controller.js');
     .route('/product/:id')
     .get(controller.getProduct)
 
-  // router
-  //   .route('/product/:id')
-  //   .post(controller.postProduct)
+  router
+    .route('/product/:id')
+    .post(controller.postProduct)
+
+  router
+    .route('/product/:id')
+    .delete(controller.deleteProduct)
 
   // router
   //   .route('/product/:id')
   //   .put(controller.updateProduct)
 
-  // router
-  //   .route('/product/:id')
-  //   .delete(controller.deleteProduct)
 
 
 

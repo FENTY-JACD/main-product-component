@@ -48,17 +48,29 @@ const dbHelpers = {
     })
   },
 
-  // postProduct: (params, callback) => {
-  //   let queryStr = ``;
+  postProduct: (params, callback) => {
+    let product = params;
+    let queryStr = `INSERT INTO products (name, price, category, description, rating, reviews, marketing) VALUES ('${product.name}', ${product.price}, '${product.category}', '${product.description}', ${product.rating}, ${product.reviews}, '${product.marketing}', '${product.background}', '${product.img1}', '${product.img2}', '${product.img3}', '${product.name1}', '${product.name2}', '${product.name2}', '${product.color1}', '${product.color2}', '${product.color3}');`
 
-  //   db.query(queryStr, (err, results) => {
-  //     if(err) {
-  //       callback(err)
-  //     } else {
-  //       callback(null, results)
-  //     }
-  //   })
-  // },
+    db.query(queryStr, (err, results) => {
+      if(err) {
+        callback(err)
+      } else {
+        callback(null, results)
+      }
+    })
+  },
+
+  deleteProduct: (id, callback) => {
+    let queryStr = `DELETE FROM products WHERE id = ${id};`;
+    db.query(queryStr, (err, results) => {
+      if(err) {
+        callback(err)
+      } else {
+        callback(null, results)
+      }
+    })
+  }
 
   // updateProduct: (params, callback) => {
   //   let queryStr = ``;
@@ -71,19 +83,6 @@ const dbHelpers = {
   //     }
   //   })
   // },
-
-  // deleteProduct: (id, callback) => {
-  //   let queryStr = `DELETE products, colors, photos FROM products INNER JOIN colors INNER JOIN photos ON t2.ref = t1.id WHERE t1.id = 1;`;
-
-  //   db.query(queryStr, (err, results) => {
-  //     if(err) {
-  //       callback(err)
-  //     } else {
-  //       callback(null, results)
-  //     }
-  //   })
-  // },
-
 
 }
 
