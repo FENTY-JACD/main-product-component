@@ -28,3 +28,7 @@ app.get('/bundle.js', (req, res) => {
   }
   res.status(200).sendFile('./Jordan-Proxy/index.html');
 });
+
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
+  });

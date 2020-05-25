@@ -42,15 +42,17 @@ const controller = {
       .catch(error => res.status(400).send(error))
   },
 
-  // postProduct: (req, res) => {
-  //   dbHelpers.postProduct(req.params, (err, results) => {
-  //     if(err) {
-  //       res.status(400).send(err)
-  //     } else {
-  //       res.status(200).send(results)
-  //     }
-  //   })
-  // },
+  postProduct: (req, res) => {
+    mongoHelpers.postProduct(req.params)
+      .then(() => res.status(200).send('Item Posted'))
+      .catch(error => res.status(400).send(error))
+  },
+
+  deleteProduct: (req, res) => {
+    mongoHelpers.deleteProduct(req.params.id)
+      .then(() => res.status(200).send('Item Deleted'))
+      .catch(error => res.status(400).send(error))
+  }
 
   // updateProduct: (req, res) => {
   //   dbHelpers.updateProduct(req.params, (err, results) => {
@@ -61,17 +63,6 @@ const controller = {
   //     }
   //   })
   // },
-
-  // deleteProduct: (req, res) => {
-  //   dbHelpers.deleteProduct(req.params, (err, results) => {
-  //     if(err) {
-  //       res.status(400).send(err)
-  //     } else {
-  //       res.status(200).send(results)
-  //     }
-  //   })
-  // }
-
 
 }
 
