@@ -37,9 +37,7 @@ const dbHelpers = {
   ////////// Here starts the work of Chris, come to save the day ////////
 
   getProduct: (id, callback) => {
-    let queryStr = `SELECT * FROM products WHERE id = ${id}`;
-
-    pool.query(queryStr, (err, results) => {
+    pool.query(`SELECT * FROM products WHERE id = ${id};`, (err, results) => {
       if(err) {
         callback(err)
       } else {

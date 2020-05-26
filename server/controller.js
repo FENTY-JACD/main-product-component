@@ -37,7 +37,6 @@ const controller = {
 
   getProduct: (req, res) => {
     let id = req.params.id;
-    console.log(id);
     dbHelpers.getProduct(id, (err, results) => {
       if(err) {
         res.status(400).send(err)
