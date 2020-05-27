@@ -13,7 +13,6 @@ class ImageView extends React.Component {
       hover: false,
     };
     this.getPhotos = this.getPhotos.bind(this);
-    this.getPhotos = this.getPhotos.bind(this);
   }
 
   componentDidMount() {
@@ -24,23 +23,23 @@ class ImageView extends React.Component {
     axios.get(`http://localhost:8080/api/photos`, {headers:{'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'}})
     .then((data) => {
       this.setState({
-        photos: data.data
+        // photos: data.data
+        photo: data.data.rows[0],
+        photo2: data.data.rows[0],
+        photo3: data.data.rows[0]
       })
-    })
-    .then(() => {
-      this.random();
     })
     .catch(err => console.error(err))
   }
 
 
-  random() {
-    this.setState({
-      photo: (this.state.photos[Math.floor(Math.random() * Math.floor(this.state.photos.length))]),
-      photo2: (this.state.photos[Math.floor(Math.random() * Math.floor(this.state.photos.length))]),
-      photo3: (this.state.photos[Math.floor(Math.random() * Math.floor(this.state.photos.length))]),
-    });
-  }
+  // random() {
+  //   this.setState({
+  //     photo: (this.state.photos[Math.floor(Math.random() * Math.floor(this.state.photos.length))]),
+  //     photo2: (this.state.photos[Math.floor(Math.random() * Math.floor(this.state.photos.length))]),
+  //     photo3: (this.state.photos[Math.floor(Math.random() * Math.floor(this.state.photos.length))]),
+  //   });
+  // }
 
   render() {
 

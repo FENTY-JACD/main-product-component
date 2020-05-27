@@ -21,7 +21,7 @@ class App extends React.Component {
       whichPic: 1,
     };
     this.getItems = this.getItems.bind(this);
-    this.random = this.random.bind(this);
+    // this.random = this.random.bind(this);
     this.changePhoto = this.photoChange.bind(this);
     this.photoChange = this.photoChange.bind(this);
   }
@@ -35,20 +35,17 @@ class App extends React.Component {
     axios.get(`http://localhost:8080/api`, {headers:{'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'}})
      .then((data) => {
       this.setState({
-        items: data.data,
+        item: data.data.rows[0],
       })
-    })
-    .then(() => {
-      this.random();
     })
     .catch(err => console.error(err));
   }
 
-  random() {
-    this.setState({
-      item: (this.state.items[Math.floor(Math.random() * Math.floor(this.state.items.length))])
-    });
-  }
+  // random() {
+  //   this.setState({
+  //     item: (this.state.items[Math.floor(Math.random() * Math.floor(this.state.items.length))])
+  //   });
+  // }
 
   photoChange(id) {
     this.setState({

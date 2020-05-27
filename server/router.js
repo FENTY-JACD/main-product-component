@@ -2,18 +2,18 @@ const router = require('express').Router();
 const controller = require('./controller.js');
 
 
-  // router
-  //   .route('/')
-  //   .get(controller.get)
+  router
+    .route('/')
+    .get(controller.get)
 
-  // router
-  //   .route('/photos')
-  //   .get(controller.getPhotos)
+  router
+    .route('/photos')
+    .get(controller.getPhotos)
 
 
-  // router
-  //   .route('/colors')
-  //   .get(controller.getColors)
+  router
+    .route('/colors')
+    .get(controller.getColors)
 
 /// Here starts the Work of Chris, the savior of this code /////
 

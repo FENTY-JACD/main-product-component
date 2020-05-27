@@ -1,6 +1,7 @@
 
 const pool = require('../database/postgresDB.js');
 const fs = require('fs');
+const path = require('path');
 
 
 let names = ["INVISIMATTE", "BLUSH", "HYDRATING", "FULL", "COMPLEXION", "GLOW", "ESSENTIALS", "PRO FILTR", "POWDER", "LUMINIZER", "MATTIFYING", "SOFT MATTE", "LIPSTICK"];
@@ -48,13 +49,13 @@ let color3Array = ["https://fentybeauty.s3-us-west-1.amazonaws.com/Fenty+Photos/
 
 /////// CREATE CSV WITH 10M data points //////////////
 
-const writeProducts = fs.createWriteStream('products.csv');
+const writeProducts = fs.createWriteStream('products1.csv');
 writeProducts.write('id, name, price, category, description, rating, reviews, marketing, background, img1, img2, img3, name1, name2, name3, color1, color2, color3\n', 'utf8');
 
 
 
 function writeTenMillionProducts(writer, encoding, callback) {
-  let i = 10000000;
+  let i = 1000;
   let id = 0;
   function write() {
     let ok = true;
@@ -100,7 +101,7 @@ function writeTenMillionProducts(writer, encoding, callback) {
 }
 
 const seedPostgresDB = () => {
-  pool.query("COPY products FROM '/Users/chrissanchez/HackReactor/SDC/main-product/products.csv' DELIMITER ',' CSV HEADER;")
+  pool.query("COPY products FROM '../products.csv' DELIMITER ',' CSV HEADER;")
 }
 
 writeTenMillionProducts(writeProducts, 'utf-8', () => {

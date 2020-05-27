@@ -48,7 +48,7 @@ class Color extends React.Component {
         placeColor: this.props.item[0].color1,
         id: this.props.item[0].id
       });
-    }, 675);
+    }, 1000);
   }
 
 
