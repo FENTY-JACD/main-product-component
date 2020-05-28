@@ -1,5 +1,5 @@
 import React from 'react';
-import Detail from './detail.jsx';
+import Detail from './Detail.jsx';
 import Inspiration from './Inspiration.jsx';
 import How from './How.jsx';
 import Ingredients from './Ingredients.jsx';
