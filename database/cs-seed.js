@@ -1,5 +1,5 @@
 
-const pool = require('../database/postgresDB.js');
+// const pool = require('../database/postgresDB.js');
 const fs = require('fs');
 const path = require('path');
 
@@ -55,7 +55,7 @@ writeProducts.write('id, name, price, category, description, rating, reviews, ma
 
 
 function writeTenMillionProducts(writer, encoding, callback) {
-  let i = 1000;
+  let i = 10000000;
   let id = 0;
   function write() {
     let ok = true;
@@ -100,12 +100,12 @@ function writeTenMillionProducts(writer, encoding, callback) {
   write()
 }
 
-const seedPostgresDB = () => {
-  pool.query("COPY products FROM '../products.csv' DELIMITER ',' CSV HEADER;")
-}
+// const seedPostgresDB = () => {
+//   pool.query("COPY products FROM '../products.csv' DELIMITER ',' CSV HEADER;")
+// }
 
 writeTenMillionProducts(writeProducts, 'utf-8', () => {
-  writeProducts.end();
+  // writeProducts.end();
   seedPostgresDB();
 });
 
