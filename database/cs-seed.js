@@ -105,8 +105,8 @@ function writeTenMillionProducts(writer, encoding, callback) {
 // }
 
 writeTenMillionProducts(writeProducts, 'utf-8', () => {
-  // writeProducts.end();
-  seedPostgresDB();
+  writeProducts.end();
+  // seedPostgresDB();
 });
 
 ///////// CODE BElOW CAN SEED DB WITH PRODUCTS BELOW 100k. Reached 1 million with 8 gb ram ///////

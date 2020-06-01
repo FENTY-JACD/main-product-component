@@ -3,12 +3,12 @@ import { sleep } from 'k6';
 
 
 export let options = {
-  vus: 100,
-  duration: '30s',
+  vus: 700,
+  duration: '180s',
 };
 
 export default function() {
-  http.get('http://localhost:8080/api/product/9999900');
+  http.get('http://localhost:8080');
   sleep(0.5);
 }
 
