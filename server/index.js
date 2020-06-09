@@ -1,4 +1,4 @@
-require('newrelic');
+
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
@@ -18,7 +18,6 @@ app.use(morgan('dev'));
 app.use(cors());
 app.use('/api', router);
 
-// app.get('/name', (req, res) => res.send('Hello Jordan!'));
 
 app.use('/', express.static(path.join(__dirname, '../client/dist')));
 
@@ -32,6 +31,7 @@ app.get('/bundle.js', (req, res) => {
 });
 
 app.get('/:id', (req, res) => {
+  console.log(req.query)
   let id = req.params;
   pool.getProduct(id, (err, results) => {
     if (err) {
@@ -43,8 +43,3 @@ app.get('/:id', (req, res) => {
     }
   });
 });
-
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
-  });
-

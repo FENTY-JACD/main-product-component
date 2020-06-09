@@ -10,6 +10,7 @@ import Details from './components/Detail/Details.jsx';
 import DropDownList from './components/DropDown/DropDownList.jsx';
 import NavLink from './components/NavLink/NavLink.jsx';
 import WishList from './components/WishList/WishList.jsx';
+import amazonUrl from '../../amazonUrl.js';
 
 
 class App extends React.Component {

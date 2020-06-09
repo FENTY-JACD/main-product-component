@@ -24,7 +24,6 @@ class Colors extends React.Component {
     if(this.props.colors.length) {
       filtered = this.props.colors.filter((item) => item.id === this.state.id);
     }
-    console.log(filtered)
 
     if(filtered) {
       return (
